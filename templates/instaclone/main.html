@@ -12,29 +12,150 @@
     <!-- Google material icons -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <style>
-        .box {
-            width: 150px;
-            height: 150px;
+        .main_body {
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+            background-color: #FAFAFA;
+        }
+
+        .left_body {
+            {#background-color: skyblue;#}
+            margin-right: 100px;
+            width: 500px;
+            height: 2000px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .right_body {
+            {#background-color: yellow;#}
+            padding-top: 20px;
+            width: 300px;
+            height: 1000px;
+            left: 72%;
+            position: fixed
+        }
+
+        .feed_box {
+            background-color: white;
+            width: 480px;
+            margin: 10px;
+            min-height: auto;
+            padding-bottom: 10px;
+        }
+
+        .feed_img{
+            width: 100%;
+            object-fit: contain;
+        }
+
+        .feed_content{
+            padding: 0px 10px;
+        }
+
+        .feed_like{
+            padding: 0px 10px;
+        }
+
+        .feed_reply{
+            padding: 0px 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feed_txt{
+            font-size: 14px;
+        }
+
+        .feed_icon{
+            padding: 5px 5px 0px 5px;
+            display: flex;
+            justify-content: space-between;
+        }span{
+             padding-right: 5px;
+        }
+
+        .feed_name{
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .feed_name_txt{
+            font-size: 14px;
+            padding: 0px 10px;
+            font-weight: bold;
+        }
+
+        .profile_box {
+            width: 40px;
+            height: 40px;
             border-radius: 70%;
             overflow: hidden;
         }
-
-        .profile{
+        .profile_img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
+        .name_content{
+            display: flex;
+            flex-direction: column;
+        }
+        .name_content_txt{
+            font-size: 12px;
+            padding: 0px 10px;
+            font-weight: bold;
+            color: lightgray;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 190px;
+        }
+        .big_profile_box {
+            width: 60px;
+            height: 60px;
+            border-radius: 70%;
+            overflow: hidden;
+        }
+
+        .link_txt{
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .recommend_box {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            align-items: center;
+        }
+
+        .comment_box{
+            margin: 40px 0 0 5px;
+            font-size: 12px;
+            font-weight: bold;
+            color: lightgray;
+            display: flex;
+            flex-direction: column;
+        }
     </style>
-    <title>Hello, world!</title>
+    <title>Hello</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="position:fixed; width:100%;">
-    <div class="container-fluid" style="justify-content: space-between; flex-wrap: nowrap; min-width:1000px">
-        <a class="navbar-brand" href="#">
-            <img style="width: 100px;"
-                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZmS9CtaizO9n07q7tCibKpTp4DskwHj5p2w&s">
-        </a>
-        <input style="width:400px;" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+
+<!-- 상단 내비게이션 바 -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 100%;height: 50px;position: fixed;" >
+    <div class="container">
+        <img style="height: 30px; object-fit: contain;"
+             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZmS9CtaizO9n07q7tCibKpTp4DskwHj5p2w&s">
+        <input class="form-control" style="width: 200px" type="search" placeholder="Search" aria-label="Search">
         <div>
             <span class="material-symbols-outlined">home</span>
             <span class="material-symbols-outlined">send</span>
@@ -44,39 +165,168 @@
         </div>
     </div>
 </nav>
-<div style="display:flex; flex-direction:row; text-align:center; justify-content: center; padding-top:200px; background-color: green;">
-    <div style="min-width:500px; height:1000px; margin-right:300px;">
-        <div style="border:solid 1px gray; background-color:white;">
-            <div style="display:flex; flex-direction:row; align-items:center; margin-left:20px">
-                <div class="box" style="width: 60px; height:60px">
-                    <img class="profile" src="https://upload.wikimedia.org/wikipedia/ko/thumb/4/4a/%EC%8B%A0%EC%A7%B1%EA%B5%AC.png/230px-%EC%8B%A0%EC%A7%B1%EA%B5%AC.png">
+
+<!-- 바디 영역 -->
+<div class="main_body">
+    <div class="left_body">
+        <div class="border feed_box">
+            <div class="feed_name">
+                <div class="profile_box">
+                    <img class="profile_img" src="https://upload.wikimedia.org/wikipedia/ko/thumb/4/4a/%EC%8B%A0%EC%A7%B1%EA%B5%AC.png/230px-%EC%8B%A0%EC%A7%B1%EA%B5%AC.png">
                 </div>
-                <div>Soiiii</div>
+                <span class="feed_name_txt"> Soiiii </span>
             </div>
-            <div>
-                <img style="width:100%" src="https://cdn.mos.cms.futurecdn.net/k6okX2VVUg4qWoyxuNLsf7.jpg">
-            </div>
-            <div style="display:flex; flex-direction:row;justify-content: space-between; margin: 0 20px ">
+            <img class="feed_img" src="https://cdn.mos.cms.futurecdn.net/k6okX2VVUg4qWoyxuNLsf7.jpg">
+            <div class="feed_icon">
                 <div>
-                    <span class="material-symbols-outlined">favorite_border</span>
+                    <span class="material-symbols-outlined">home</span>
                     <span class="material-symbols-outlined">mode_comment</span>
                     <span class="material-symbols-outlined">send</span>
+                    <span class="material-symbols-outlined">add_box</span>
                 </div>
                 <div>
-                    <span class="material-symbols-outlined">bookmark_border</span>
+                    <span class="material-symbols-outlined">favorite</span>
                 </div>
             </div>
-            <div style="text-align:left; font-size:14px; margin:0 20px">a_aetrd <b>외 19명</b>이 좋아합니다.</div>
-            <div style="text-align:left; font-size:14px; margin:0 20px"> <b> Soiiii</b> 오예 </div>
-            <div style="text-align:left; font-size:14px; margin:0 20px"> <b> free</b> Great </div>
-            <div style="text-align:left; font-size:14px; margin:0 20px"> <b> work</b> COOL </div>
-            <div style="border-top:"><input type="text" style="box-shadow: none; outline:none;" class="form-control" placeholder="댓글 달기..."></div>
+
+            <div class="feed_like">
+                <p class="feed_txt"> <b>좋아요 10개</b></p>
+            </div>
+            <div class="feed_content">
+                <p class="feed_txt"> <b>Soiiii</b> 여행! </p>
+            </div>
+            <div class="feed_reply">
+                <div class="feed_txt"> <b> free</b> Great </div>
+                <div class="feed_txt"> <b> work</b> COOL </div>
+            </div>
+        </div>
+        <div class="border feed_box">
+            <div class="feed_name">
+                <div class="profile_box">
+                    <img class="profile_img" src="https://scontent-ssn1-1.xx.fbcdn.net/v/t1.6435-9/s1080x2048/165180104_277246477102900_6106347261862438192_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=730e14&_nc_ohc=1sN4d8i7rn8AX-7aKYN&_nc_ht=scontent-ssn1-1.xx&oh=5049b7cd176848e330b0f5ea95f28172&oe=615A08D1">
+                </div>
+                <span class="feed_name_txt"> jin.99 </span>
+            </div>
+            <img class="feed_img" src="https://mblogthumb-phinf.pstatic.net/MjAxNzA2MTFfMjc1/MDAxNDk3MTcyMDgyNzEw.ID5RyHWKvsVEW2NS9EQGyRYX7vUaXr7znQeuTrRRmdIg.gK7MD7VhNJPkV4_dueiWer2y-oH7NAAmEklF-6bbYyQg.JPEG.jejubyeol/%EC%97%AC%EB%A6%84%EC%97%90_%EC%A0%9C%EC%A3%BC%EB%8F%84_%EC%82%AC%EC%A7%84%EC%B0%8D%EA%B8%B0_%EC%A2%8B%EC%9D%80%EA%B3%B3.jpg?type=w800">
+
+            <div class="feed_icon">
+                <div>
+                    <span class="material-symbols-outlined">home</span>
+                    <span class="material-symbols-outlined">mode_comment</span>
+                    <span class="material-symbols-outlined">send</span>
+                    <span class="material-symbols-outlined">add_box</span>
+                </div>
+                <div>
+                    <span class="material-symbols-outlined">favorite</span>
+                </div>
+            </div>
+            <div class="feed_like">
+                <p class="feed_txt"> <b>좋아요 10개</b></p>
+            </div>
+            <div class="feed_content">
+                <p class="feed_txt"> <b> jin.99 </b> 코로나라서 해외여행을 못가니 최근 제주도 가는사람이 늘고있습니다~ 제주도도 조심해야되는건 마찬가지~!</p>
+            </div>
+            <div class="feed_reply">
+                <span class="feed_txt"> <b> mychew </b> 제주도 가고 싶어요 ㅠㅠ</span>
+                <span class="feed_txt"> <b> cho </b> 제주도  ㄱ ㄱ </span>
+            </div>
         </div>
     </div>
-    <div style="width:400px; height:1000px; background:yellow; position:fixed; left:62%">
-        Right
+    <div class="right_body">
+        <div class="feed_name" style="justify-content: space-between">
+            <div style="display: flex; align-items: center; ">
+                <div class="big_profile_box">
+                    <img class="profile_img"
+                         src="https://scontent-ssn1-1.xx.fbcdn.net/v/t1.6435-9/s1080x2048/165180104_277246477102900_6106347261862438192_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=730e14&_nc_ohc=1sN4d8i7rn8AX-7aKYN&_nc_ht=scontent-ssn1-1.xx&oh=5049b7cd176848e330b0f5ea95f28172&oe=615A08D1">
+                </div>
+                <div class="name_content">
+                    <span class="feed_name_txt"> jin.99 </span>
+                    <span class="name_content_txt"> Moon Kyujin</span>
+                </div>
+            </div>
+
+            <a class="link_txt" >
+                전환
+            </a>
+        </div>
+
+        <div class="recommend_box">
+            <span style="color: gray"> 회원님을 위한 추천</span>
+            <span style="font-size: 12px"> 모두 보기 </span>
+        </div>
+        <div>
+            <div class="feed_name" style="justify-content: space-between">
+                <div class="profile_box">
+                    <img class="profile_img"
+                         src="https://i.pinimg.com/736x/93/a6/8b/93a68b57a54e4bdc73d43d1d049b94b3.jpg">
+                </div>
+                <div class="name_content">
+                    <span class="feed_name_txt"> dation3388 </span>
+                    <span class="name_content_txt"> instaclone 신규가입</span>
+                </div>
+                <a class="link_txt">
+                    팔로우
+                </a>
+            </div>
+            <div class="feed_name" style="justify-content: space-between">
+                <div class="profile_box">
+                    <img class="profile_img"
+                         src="http://file3.instiz.net/data/cached_img/upload/2021/01/27/18/2ce2f41f7e9f09c0acc77faac7452dbf.jpg">
+                </div>
+                <div class="name_content">
+                    <span class="feed_name_txt"> gaoudi </span>
+                    <span class="name_content_txt"> IU 외 5명이 팔로우</span>
+                </div>
+                <a class="link_txt">
+                    팔로우
+                </a>
+            </div>
+            <div class="feed_name" style="justify-content: space-between">
+                <div class="profile_box">
+                    <img class="profile_img"
+                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTiCVWdogd6Ocsm08kL8ph4sb1MN0AYEiSUQ&usqp=CAU">
+                </div>
+                <div class="name_content">
+                    <span class="feed_name_txt"> jinajr </span>
+                    <span class="name_content_txt"> IU 외 5명이 팔로우</span>
+                </div>
+                <a class="link_txt">
+                    팔로우
+                </a>
+            </div>
+            <div class="feed_name" style="justify-content: space-between">
+                <div class="profile_box">
+                    <img class="profile_img"
+                         src="https://pbs.twimg.com/media/EhzH0_DU4AEZ9yr.jpg">
+                </div>
+                <div class="name_content">
+                    <span class="feed_name_txt"> 123456789 </span>
+                    <span class="name_content_txt"> jj님이 외 3명 팔로우 </span>
+                </div>
+                <a class="link_txt">
+                    팔로우
+                </a>
+            </div>
+            <div class="feed_name" style="justify-content: space-between">
+                <div class="profile_box">
+                    <img class="profile_img"
+                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHPNYM5RQgA2F7BtpBQ-OrNFKDXVDUpypRuw&usqp=CAU">
+                </div>
+                <div class="name_content">
+                    <span class="feed_name_txt"> instiz </span>
+                    <span class="name_content_txt">  </span>
+                </div>
+                <a class="link_txt">
+                    팔로우
+                </a>
+            </div>
+        </div>
+        <div class="comment_box">
+        </div>
     </div>
 </div>
+
+
 <!-- Optional JavaScript; choose one of the two! -->
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
