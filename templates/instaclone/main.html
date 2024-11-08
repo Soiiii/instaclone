@@ -149,7 +149,6 @@
     <title>Hello</title>
 </head>
 <body>
-
 <!-- 상단 내비게이션 바 -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="width: 100%;height: 50px;position: fixed;" >
     <div class="container">
@@ -169,14 +168,16 @@
 <!-- 바디 영역 -->
 <div class="main_body">
     <div class="left_body">
+        <!-- 여기서부터 피드박스 -->
+        {% for feed in feeds %}
         <div class="border feed_box">
             <div class="feed_name">
                 <div class="profile_box">
-                    <img class="profile_img" src="https://upload.wikimedia.org/wikipedia/ko/thumb/4/4a/%EC%8B%A0%EC%A7%B1%EA%B5%AC.png/230px-%EC%8B%A0%EC%A7%B1%EA%B5%AC.png">
+                    <img class="profile_img" src="{{feed.profile_image}}">
                 </div>
                 <span class="feed_name_txt"> Soiiii </span>
             </div>
-            <img class="feed_img" src="https://cdn.mos.cms.futurecdn.net/k6okX2VVUg4qWoyxuNLsf7.jpg">
+            <img class="feed_img" src="{{feed.image}}">
             <div class="feed_icon">
                 <div>
                     <span class="material-symbols-outlined">home</span>
@@ -190,10 +191,10 @@
             </div>
 
             <div class="feed_like">
-                <p class="feed_txt"> <b>좋아요 10개</b></p>
+                <p class="feed_txt"> <b>좋아요 {{feed.like_count}}개</b></p>
             </div>
             <div class="feed_content">
-                <p class="feed_txt"> <b>Soiiii</b> 여행! </p>
+                <p class="feed_txt"> <b>{{feed.user_id}}</b> {{feed.content}} </p>
             </div>
             <div class="feed_reply">
                 <div class="feed_txt"> <b> free</b> Great </div>
@@ -203,11 +204,11 @@
         <div class="border feed_box">
             <div class="feed_name">
                 <div class="profile_box">
-                    <img class="profile_img" src="https://scontent-ssn1-1.xx.fbcdn.net/v/t1.6435-9/s1080x2048/165180104_277246477102900_6106347261862438192_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=730e14&_nc_ohc=1sN4d8i7rn8AX-7aKYN&_nc_ht=scontent-ssn1-1.xx&oh=5049b7cd176848e330b0f5ea95f28172&oe=615A08D1">
+                    <img class="profile_img" src="">
                 </div>
                 <span class="feed_name_txt"> jin.99 </span>
             </div>
-            <img class="feed_img" src="https://mblogthumb-phinf.pstatic.net/MjAxNzA2MTFfMjc1/MDAxNDk3MTcyMDgyNzEw.ID5RyHWKvsVEW2NS9EQGyRYX7vUaXr7znQeuTrRRmdIg.gK7MD7VhNJPkV4_dueiWer2y-oH7NAAmEklF-6bbYyQg.JPEG.jejubyeol/%EC%97%AC%EB%A6%84%EC%97%90_%EC%A0%9C%EC%A3%BC%EB%8F%84_%EC%82%AC%EC%A7%84%EC%B0%8D%EA%B8%B0_%EC%A2%8B%EC%9D%80%EA%B3%B3.jpg?type=w800">
+            <img class="feed_img" src="">
 
             <div class="feed_icon">
                 <div>
@@ -231,7 +232,9 @@
                 <span class="feed_txt"> <b> cho </b> 제주도  ㄱ ㄱ </span>
             </div>
         </div>
+        {% endfor %}
     </div>
+    <!-- 여기까지 피드박스 -->
     <div class="right_body">
         <div class="feed_name" style="justify-content: space-between">
             <div style="display: flex; align-items: center; ">
